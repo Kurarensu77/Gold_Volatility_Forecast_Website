@@ -212,6 +212,24 @@ The volatility spread properties reveal additional nuances in the strategy's per
 
 ## 5. Visualizations and Results Analysis
 
+<style>
+img {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+table {
+    width: 100%;
+    margin: 20px 0;
+}
+td {
+    vertical-align: top;
+    padding: 10px;
+}
+</style>
+
 <table>
 <tr>
 <th>Category</th>
@@ -223,7 +241,7 @@ The volatility spread properties reveal additional nuances in the strategy's per
 <td rowspan="2"><strong>Model Comparison</strong></td>
 <td>
 
-<img src="images/model_comparison.png" alt="GARCH Model Comparison">
+<img src="images/model_comparison.png" alt="GARCH Model Comparison" style="max-width: 800px;">
 
 </td>
 <td>
@@ -235,7 +253,7 @@ The GARCH model comparison reveals distinctive volatility clustering patterns ac
 <tr>
 <td>
 
-<img src="images/error_metrics.png" alt="Forecast Accuracy">
+<img src="images/error_metrics.png" alt="Forecast Accuracy" style="max-width: 800px;">
 
 </td>
 <td>
@@ -248,60 +266,60 @@ The forecast accuracy metrics demonstrate a clear horizon-dependent pattern of m
 <td rowspan="5"><strong>Forecast Performance</strong></td>
 <td>
 
-<img src="images/forecast_vs_realized_1d.png" alt="1-Day Forecasts">
+<img src="images/forecast_vs_realized_1d.png" alt="1-Day Forecasts" style="max-width: 800px;">
 
 </td>
 <td>
-<strong>1-Day Forecast Horizon</strong><br>
-At the 1-day horizon, EGARCH(1,1) demonstrates superior responsiveness to volatility shifts, tracking the realized volatility with minimal lag. The plot reveals that all models capture directional changes effectively, but EGARCH adapts more rapidly to volatility regime transitions, explaining its superior statistical performance at this horizon.
-</td>
-</tr>
-
-<tr>
-<td>
-
-<img src="images/forecast_vs_realized_5d.png" alt="5-Day Forecasts">
-
-</td>
-<td>
-<strong>5-Day Forecast Horizon</strong><br>
-For the 5-day horizon, GARCH(2,1) exhibits the optimal balance between responsiveness and stability. The visualization demonstrates that while EGARCH(1,1) shows heightened sensitivity to market shifts, it occasionally overreacts to transient volatility spikes. GARCH(2,1)'s additional lag parameter provides sufficient memory to filter out noise while maintaining appropriate responsiveness.
+<strong>1-Day Forecasts</strong><br>
+The 1-day forecast comparison shows high-frequency volatility dynamics. EGARCH(1,1) demonstrates superior performance in capturing short-term volatility spikes, with an RMSE of 0.0156. The model effectively tracks both the magnitude and timing of volatility changes, though with some tendency to over-forecast during low-volatility periods.
 </td>
 </tr>
 
 <tr>
 <td>
 
-<img src="images/forecast_vs_realized_10d.png" alt="10-Day Forecasts">
+<img src="images/forecast_vs_realized_5d.png" alt="5-Day Forecasts" style="max-width: 800px;">
 
 </td>
 <td>
-<strong>10-Day Forecast Horizon</strong><br>
-At the 10-day horizon, forecast curves exhibit pronounced smoothing effects relative to realized volatility. GARCH(2,1) maintains its predictive advantage, demonstrating appropriate responsiveness while avoiding the excess volatility evident in EGARCH forecasts. The temporal separation between forecast peaks and realized volatility maxima highlights the challenge of precise timing at intermediate horizons.
-</td>
-</tr>
-
-<tr>
-<td>
-
-<img src="images/forecast_vs_realized_21d.png" alt="21-Day Forecasts">
-
-</td>
-<td>
-<strong>21-Day Forecast Horizon</strong><br>
-For the 21-day horizon, GJR-GARCH(1,1) demonstrates superior performance. The plot illustrates that asymmetric volatility specifications become increasingly important at longer horizons, as leverage effects compound over extended periods. The reduced correlation between forecasts and realizations at this horizon (coefficients of 0.52-0.56) reflects the inherent difficulty of long-horizon volatility prediction.
+<strong>5-Day Forecasts</strong><br>
+The 5-day horizon reveals the emergence of GARCH(2,1)'s superior performance, with an RMSE of 0.0198. The additional ARCH term enables better capture of weekly volatility patterns, particularly during periods of market stress. The forecast errors show reduced sensitivity to daily noise while maintaining responsiveness to significant market events.
 </td>
 </tr>
 
 <tr>
 <td>
 
-<img src="images/garch11_all_horizons.png" alt="GARCH(1,1) Horizon Comparison">
+<img src="images/forecast_vs_realized_10d.png" alt="10-Day Forecasts" style="max-width: 800px;">
 
 </td>
 <td>
-<strong>Horizon Comparison for GARCH(1,1)</strong><br>
-This visualization demonstrates how the same model (GARCH(1,1)) produces increasingly smoothed forecasts as the horizon extends. The 1-day forecasts closely track realized volatility, while 21-day forecasts exhibit substantial smoothing. This progressive dampening of forecast responsiveness reflects the mean-reverting property of volatility in the GARCH framework, with long-horizon forecasts converging toward the unconditional variance.
+<strong>10-Day Forecasts</strong><br>
+At the 10-day horizon, GARCH(2,1) continues to outperform with an RMSE of 0.0217. The forecasts show improved smoothing of high-frequency noise while maintaining accuracy in predicting medium-term volatility trends. The model demonstrates particular strength in identifying regime changes in volatility dynamics.
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img src="images/forecast_vs_realized_21d.png" alt="21-Day Forecasts" style="max-width: 800px;">
+
+</td>
+<td>
+<strong>21-Day Forecasts</strong><br>
+The 21-day horizon marks a shift in model superiority, with GJR-GARCH(1,1) achieving the lowest RMSE of 0.0231. The asymmetric specification proves crucial for longer-horizon forecasting, particularly in capturing the differential impact of positive and negative returns on future volatility. EGARCH's performance degrades significantly at this horizon, with an RMSE of 0.1119.
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img src="images/garch11_all_horizons.png" alt="GARCH(1,1) Horizon Comparison" style="max-width: 800px;">
+
+</td>
+<td>
+<strong>GARCH(1,1) Horizon Comparison</strong><br>
+The multi-horizon comparison of GARCH(1,1) forecasts reveals systematic changes in volatility dynamics across timeframes. Shorter horizons (1-5 days) show higher forecast volatility and greater responsiveness to recent market events. Longer horizons (10-21 days) exhibit smoother forecasts with reduced sensitivity to daily fluctuations, though with some loss of precision in capturing sudden volatility spikes.
 </td>
 </tr>
 
@@ -309,62 +327,62 @@ This visualization demonstrates how the same model (GARCH(1,1)) produces increas
 <td rowspan="2"><strong>Term Structure Analysis</strong></td>
 <td>
 
-<img src="images/volatility_term_structure_3d.png" alt="Term Structure Evolution">
+<img src="images/volatility_term_structure_3d.png" alt="Term Structure Evolution" style="max-width: 800px;">
 
 </td>
 <td>
-<strong>Volatility Term Structure Evolution</strong><br>
-The 3D surface plot captures the temporal evolution of gold's volatility term structure throughout the 250-day testing period. The surface exhibits pronounced regime shifts, with extended periods of upward-sloping curves (contango) during market calm, indicating the presence of volatility risk premium. During market stress events, the surface inverts dramatically into backwardation, with near-term volatility predictions exceeding longer-term forecasts.
-</td>
-</tr>
-
-<tr>
-<td>
-
-<img src="images/volatility_term_structure.png" alt="Term Structure Snapshots">
-
-</td>
-<td>
-<strong>Cross-Sectional Term Structure Analysis</strong><br>
-This visualization presents cross-sectional snapshots of the volatility term structure at selected points in time. The plot reveals distinct regimes: normal periods with upward-sloping curves (contango), stress periods with inverted curves (backwardation), and transition periods with flat or humped structures. These structural shifts correspond to significant market events and demonstrate the dynamic nature of volatility expectations across different time horizons.
-</td>
-</tr>
-
-<tr>
-<td rowspan="2"><strong>Trading Strategy</strong></td>
-<td>
-
-<img src="images/win_rate_by_horizon.png" alt="Win Rate by Horizon">
-
-</td>
-<td>
-<strong>Trading Strategy Win Rate by Horizon</strong><br>
-The win rate analysis across different forecast horizons reveals a statistically significant monotonic improvement in strategy performance as the time horizon extends. The 5-day horizon shows a modest 44.44% win rate, while the 10-day and 21-day horizons demonstrate progressively better performance at 56.52% and 58.33% respectively. The 21-day horizon achieves the highest win rate, suggesting that longer horizons provide more reliable trading signals due to the mean-reverting nature of volatility.
+<strong>Term Structure Evolution</strong><br>
+The 3D visualization of volatility term structure reveals complex temporal patterns in gold's volatility dynamics. The surface plot shows pronounced volatility clustering, with periods of elevated volatility persisting across multiple horizons. The term structure exhibits significant curvature during market stress periods, reflecting the market's expectation of mean reversion in volatility.
 </td>
 </tr>
 
 <tr>
 <td>
 
-<img src="images/win_rate_by_signal.png" alt="Win Rate by Signal Type">
+<img src="images/volatility_term_structure.png" alt="Term Structure Snapshots" style="max-width: 800px;">
+
+</td>
+<td>
+<strong>Term Structure Snapshots</strong><br>
+Selected snapshots of the volatility term structure highlight key features of gold's volatility dynamics. The plots show varying degrees of term structure curvature, with steeper curves during high-volatility periods. The evolution of the term structure provides insights into market expectations of volatility persistence and mean reversion.
+</td>
+</tr>
+
+<tr>
+<td rowspan="2"><strong>Trading Strategy Performance</strong></td>
+<td>
+
+<img src="images/win_rate_by_horizon.png" alt="Win Rate by Horizon" style="max-width: 800px;">
+
+</td>
+<td>
+<strong>Win Rate by Horizon</strong><br>
+The horizon-specific win rates demonstrate a monotonic improvement in strategy performance as the forecast horizon extends. The 21-day horizon achieves the highest win rate at 58.33%, followed by the 10-day horizon at 56.52%. The 5-day horizon shows a lower win rate of 44.44%, reflecting the challenges of short-term volatility forecasting.
+</td>
+</tr>
+
+<tr>
+<td>
+
+<img src="images/win_rate_by_signal.png" alt="Win Rate by Signal Type" style="max-width: 800px;">
 
 </td>
 <td>
 <strong>Win Rate by Signal Type</strong><br>
-The analysis reveals that during the testing period, the strategy exclusively generated short volatility signals, achieving a 55.36% win rate. This concentration in signal type reflects the specific market conditions during the testing period, where realized volatility consistently exceeded GARCH forecasts. The absence of long volatility signals suggests a systematic bias in the market's volatility expectations during this period.
+The signal-type analysis reveals that the strategy generated exclusively short volatility signals during the testing period, achieving a 55.36% win rate. The concentration in signal type reflects the specific market conditions during the testing period, where realized volatility consistently exceeded GARCH forecasts.
 </td>
 </tr>
 
 <tr>
-<td><strong>Signal Analysis</strong></td>
+<td><strong>Volatility Spread</strong></td>
 <td>
 
-<img src="images/vol_trading_signals.png" alt="Volatility Spread">
+<img src="images/vol_trading_signals.png" alt="Volatility Spread" style="max-width: 800px;">
 
 </td>
 <td>
 <strong>Volatility Spread Analysis</strong><br>
-The time-series analysis of the volatility spread (realized minus GARCH-forecasted) demonstrates clear mean-reverting properties with distinct trading signal boundaries. The average volatility spread at signal initiation is 3.2%, with an average convergence time of 8.7 days for successful trades. The spread exhibits pronounced seasonal patterns, with higher amplitudes during Q1 and Q3, and a mean-reversion half-life of approximately 12.4 trading days.
+The volatility spread visualization shows the relationship between forecasted and realized volatility. The plot reveals mean-reverting behavior with a half-life of approximately 12.4 trading days. The spread exhibits seasonal patterns with higher amplitudes during Q1 and Q3, and shows asymmetric reversion where larger positive spreads revert more rapidly than negative spreads.
 </td>
 </tr>
 </table>
