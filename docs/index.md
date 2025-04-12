@@ -214,34 +214,45 @@ The volatility spread properties reveal additional nuances in the strategy's per
 
 <style>
 img {
-    max-width: 800px;
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 400px;
+    object-fit: contain;
     display: block;
     margin: 20px auto;
+    background-color: white;
 }
 table {
     width: 100%;
     margin: 20px 0;
+    border-collapse: collapse;
 }
 td {
     vertical-align: top;
     padding: 10px;
+    width: 33.33%;
+}
+td img {
+    margin: 0 auto;
+}
+th {
+    text-align: left;
+    padding: 10px;
+    background-color: #f5f5f5;
 }
 </style>
 
 <table>
 <tr>
-<th>Category</th>
-<th>Visualization</th>
-<th>Description</th>
+<th style="width: 20%">Category</th>
+<th style="width: 40%">Visualization</th>
+<th style="width: 40%">Description</th>
 </tr>
 
 <tr>
 <td rowspan="2"><strong>Model Comparison</strong></td>
-<td>
+<td style="text-align: center">
 
-<img src="images/model_comparison.png" alt="GARCH Model Comparison" style="max-width: 800px;">
+<img src="images/model_comparison.png" alt="GARCH Model Comparison">
 
 </td>
 <td>
@@ -251,9 +262,9 @@ The GARCH model comparison reveals distinctive volatility clustering patterns ac
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/error_metrics.png" alt="Forecast Accuracy" style="max-width: 800px;">
+<img src="images/error_metrics.png" alt="Forecast Accuracy">
 
 </td>
 <td>
@@ -264,9 +275,9 @@ The forecast accuracy metrics demonstrate a clear horizon-dependent pattern of m
 
 <tr>
 <td rowspan="5"><strong>Forecast Performance</strong></td>
-<td>
+<td style="text-align: center">
 
-<img src="images/forecast_vs_realized_1d.png" alt="1-Day Forecasts" style="max-width: 800px;">
+<img src="images/forecast_vs_realized_1d.png" alt="1-Day Forecasts">
 
 </td>
 <td>
@@ -276,9 +287,9 @@ The 1-day forecast comparison shows high-frequency volatility dynamics. EGARCH(1
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/forecast_vs_realized_5d.png" alt="5-Day Forecasts" style="max-width: 800px;">
+<img src="images/forecast_vs_realized_5d.png" alt="5-Day Forecasts">
 
 </td>
 <td>
@@ -288,9 +299,9 @@ The 5-day horizon reveals the emergence of GARCH(2,1)'s superior performance, wi
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/forecast_vs_realized_10d.png" alt="10-Day Forecasts" style="max-width: 800px;">
+<img src="images/forecast_vs_realized_10d.png" alt="10-Day Forecasts">
 
 </td>
 <td>
@@ -300,9 +311,9 @@ At the 10-day horizon, GARCH(2,1) continues to outperform with an RMSE of 0.0217
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/forecast_vs_realized_21d.png" alt="21-Day Forecasts" style="max-width: 800px;">
+<img src="images/forecast_vs_realized_21d.png" alt="21-Day Forecasts">
 
 </td>
 <td>
@@ -312,9 +323,9 @@ The 21-day horizon marks a shift in model superiority, with GJR-GARCH(1,1) achie
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/garch11_all_horizons.png" alt="GARCH(1,1) Horizon Comparison" style="max-width: 800px;">
+<img src="images/garch11_all_horizons.png" alt="GARCH(1,1) Horizon Comparison">
 
 </td>
 <td>
@@ -325,9 +336,9 @@ The multi-horizon comparison of GARCH(1,1) forecasts reveals systematic changes 
 
 <tr>
 <td rowspan="2"><strong>Term Structure Analysis</strong></td>
-<td>
+<td style="text-align: center">
 
-<img src="images/volatility_term_structure_3d.png" alt="Term Structure Evolution" style="max-width: 800px;">
+<img src="images/volatility_term_structure_3d.png" alt="Term Structure Evolution">
 
 </td>
 <td>
@@ -337,9 +348,9 @@ The 3D visualization of volatility term structure reveals complex temporal patte
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/volatility_term_structure.png" alt="Term Structure Snapshots" style="max-width: 800px;">
+<img src="images/volatility_term_structure.png" alt="Term Structure Snapshots">
 
 </td>
 <td>
@@ -350,9 +361,9 @@ Selected snapshots of the volatility term structure highlight key features of go
 
 <tr>
 <td rowspan="2"><strong>Trading Strategy Performance</strong></td>
-<td>
+<td style="text-align: center">
 
-<img src="images/win_rate_by_horizon.png" alt="Win Rate by Horizon" style="max-width: 800px;">
+<img src="images/win_rate_by_horizon.png" alt="Win Rate by Horizon">
 
 </td>
 <td>
@@ -362,9 +373,9 @@ The horizon-specific win rates demonstrate a monotonic improvement in strategy p
 </tr>
 
 <tr>
-<td>
+<td style="text-align: center">
 
-<img src="images/win_rate_by_signal.png" alt="Win Rate by Signal Type" style="max-width: 800px;">
+<img src="images/win_rate_by_signal.png" alt="Win Rate by Signal Type">
 
 </td>
 <td>
@@ -375,9 +386,9 @@ The signal-type analysis reveals that the strategy generated exclusively short v
 
 <tr>
 <td><strong>Volatility Spread</strong></td>
-<td>
+<td style="text-align: center">
 
-<img src="images/vol_trading_signals.png" alt="Volatility Spread" style="max-width: 800px;">
+<img src="images/vol_trading_signals.png" alt="Volatility Spread">
 
 </td>
 <td>
