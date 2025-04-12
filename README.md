@@ -20,11 +20,3 @@ Visit the website at: [https://clarencequek.github.io/Gold_Volatility_Forecast_W
   - `images/` - Contains all the visualizations
   - `_config.yml` - GitHub Pages configuration
 
-## Local Development
-
-To run this website locally:
-
-1. Install Jekyll: `gem install jekyll bundler`
-2. Navigate to the repository: `cd Gold_Volatility_Forecast_Website`
-3. Run Jekyll: `bundle exec jekyll serve`
-4. View the website at: `http://localhost:4000`
