@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: Gold Volatility Forecasting
+description: Analysis of GARCH-family models for Gold volatility forecasting
+baseurl: ""
+url: "" 
