@@ -4,14 +4,12 @@ This repository contains the website for my research on Gold Volatility Forecast
 
 ## Contents
 
-- Analysis of GARCH-family models for Gold volatility forecasting
-- Comparison of model performance across different time horizons
+- Analysis of GARCH-family models for Gold volatility forecasting & rolling forecast comparison
 - Trading strategy implementation and performance analysis
-- Visualizations and results analysis
 
 ## View the Website
 
-Visit the website at: [https://clarencequek.github.io/Gold_Volatility_Forecast_Website/](https://clarencequek.github.io/Gold_Volatility_Forecast_Website/)
+Visit the website at: [https://kurarensu77.github.io/Gold_Volatility_Forecast_Website/](https://kurarensu77.github.io/Gold_Volatility_Forecast_Website/)
 
 ## Repository Structure
 
